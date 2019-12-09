@@ -11,4 +11,7 @@ FROM mcr.microsoft.com/azure-functions/dotnet:2.0
 ENV AzureWebJobsScriptRoot=/home/site/wwwroot \
     AzureFunctionsJobHost__Logging__Console__IsEnabled=true
 
+# Disabling Azure function default page
+ENV AzureWebJobsDisableHomepage=true
+
 COPY --from=installer-env ["/home/site/wwwroot", "/home/site/wwwroot"]
