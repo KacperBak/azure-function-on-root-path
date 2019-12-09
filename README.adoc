@@ -1,0 +1,1 @@
+This project has been setuped with the following guide: https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-function-linux-custom-image?tabs=nodejs[Create a function on Linux using a custom image]
