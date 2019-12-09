@@ -9,6 +9,10 @@ namespace RootMappedProject
 {
     public static class MyRootMappedFunction
     {
+        /// <summary>
+        /// curl -v 127.0.0.1/Simple
+        /// </summary>
+        /// <returns>HTTP/1.1 200 OK</returns>
         [FunctionName("Simple")]
         public static async Task<IActionResult> Simple(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)] HttpRequest req,
@@ -18,6 +22,10 @@ namespace RootMappedProject
             return (ActionResult)new OkObjectResult("true");
         }
 
+        /// <summary>
+        /// curl -v 127.0.0.1 should return 400 Status code
+        /// </summary>
+        /// <returns>HTTP/1.1 204 No Content</returns>
         [FunctionName("Root")]
         public static async Task<IActionResult> Root(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "")] HttpRequest req,
